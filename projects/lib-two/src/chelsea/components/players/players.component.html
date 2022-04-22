@@ -1,0 +1,6 @@
+<div>
+    <button (click)="getTitles()">get titles</button>
+    <div *ngFor="let player of players">
+        <lib-player-tile [name]="player"></lib-player-tile>
+    </div>    
+</div>

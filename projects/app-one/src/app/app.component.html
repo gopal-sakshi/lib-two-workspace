@@ -1,0 +1,26 @@
+<div class="app-container">
+  <div class="load-from-html">
+    <h4>if you load library component from html, using &lt;lib-players-69&gt;, you need to import the module from library</h4>
+    <h6>hence, we had to import chelsea module, but we didnt import 'PlayersChelseaComponent'</h6>
+    <h6> bcoz, for this to work ---> &lt;lib-players-69&gt; ----> we need to import the whole module... that component alone wont do</h6>
+    <button (click)="useFromHtml=!useFromHtml">load from HTML</button>
+    <div *ngIf="useFromHtml">
+      <lib-players-chelsea></lib-players-chelsea>
+    </div>
+  </div>
+  <div class="other-way">
+    <h4>if you extend library component (or) other ways, it seems, no need to import the module</h4>
+    <h6> for example, we wont import atletico module & try</h6>
+    <h5 style="color:rgb(118, 118, 199)">apparently, you cant... you need to import the module, if you want to load the library component via routing way</h5>
+    <h6>learnings: you dont need to import the whole lib-module... you can just import the lib-component in the required .ts file</h6>
+    <h5>but if u want to use &lt;lib-players-69&gt; way, u need to import the whole module, component alone wont do</h5>
+    <button (click)="useOtherWay()">load directly</button>    
+  </div>
+  <div>
+    <a [routerLink]="['players']"> players </a>
+    <a [routerLink]="['club-info']"> club-info </a>
+  </div>  
+</div>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
